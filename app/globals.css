@@ -1,26 +1,82 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
+  --background: #ebf6f5;
   --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --foreground-sec: #272626;
+  --font-poppins: "Poppins", sans-serif;
+  --font-kaushan-script: "Kaushan Script", cursive;
+  --post-image-size: 250px;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    /* --background: #0a0a0a;
+    --foreground: #ededed; */
   }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-poppins); /* Default font set to Poppins */
+  /* font-size: 14px; */
+}
+.content {
+  background-color: var(--background);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-kaushan-script); /* Use Dancing Script for headings */
+}
+
+h1 {
+  font-size: 3rem; /* Adjust size as needed */
+  line-height: 1.2; /* Optional: Adjust line height for better spacing */
+}
+
+h2 {
+  font-size: 2.5rem;
+}
+
+h3 {
+  font-size: 2rem;
+}
+
+/* Add similar styles for h4, h5, h6 if needed */
+
+.hero {
+  color: white;
+  position: relative; /* Ensures the pseudo-element is positioned relative to the .hero container */
+  background-image: url('/img/bg.jpg');
+  background-size: cover; /* Ensures the image covers the entire container */
+  background-repeat: no-repeat; /* Prevents the image from repeating */
+  background-position: center; /* Centers the image */
+  width: 100%; /* Makes the hero section span the full width */
+  height: 100%; /* Fills the height of the container */
+  min-height: 120vh; /* Optional: Ensures a minimum height */
+}
+
+.hero::before {
+  content: ''; /* Creates an empty element for the overlay */
+  position: absolute; /* Positions the overlay relative to the .hero container */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(39, 39, 39, 0.8); /* Adds a semi-transparent gray overlay */
+  z-index: 1; /* Ensures the overlay is above the background image */
+}
+
+.hero > * {
+  position: relative; /* Ensures child elements are above the overlay */
+  z-index: 2;
+}
+
+.kaushan {
+  font-family: var(--font-kaushan-script);
+}
+
+.footer {
+  background-color: var(--foreground-sec);
 }

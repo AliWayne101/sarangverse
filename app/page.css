@@ -1,0 +1,91 @@
+/* Categories Section */
+.categories {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.category {
+    margin-bottom: 2rem;
+}
+
+.category-title {
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    text-align: left;
+    transform: translateY(10px) !important;
+}
+
+/* Custom horizontal scrollbar for the posts container */
+.posts {
+    display: flex;
+    gap: 1rem;
+    overflow-x: auto; /* Enables horizontal scrolling */
+    padding-bottom: 1rem;
+    scroll-behavior: smooth;
+    max-width: calc(var(--post-image-size) * 4 + 3rem); /* Show 4 posts with gaps */
+    margin: 0 auto; /* Center the posts container */
+    align-items: center; /* Ensures posts are vertically aligned */
+}
+
+/* Custom scrollbar styles */
+.posts::-webkit-scrollbar {
+    height: 10px; /* Custom height for the horizontal scrollbar */
+}
+
+.posts::-webkit-scrollbar-thumb {
+    background: #888; /* Custom color for the scrollbar thumb */
+    border-radius: 5px; /* Rounded corners for the scrollbar thumb */
+}
+
+.posts::-webkit-scrollbar-thumb:hover {
+    background: #555; /* Darker color on hover */
+}
+
+.posts::-webkit-scrollbar-track {
+    background: #f0f0f0; /* Custom color for the scrollbar track */
+    border-radius: 5px; /* Rounded corners for the scrollbar track */
+}
+
+/* For Firefox */
+.posts {
+    scrollbar-color: #888 #f0f0f0; /* Thumb color and track color */
+    scrollbar-width: thin; /* Makes the scrollbar thinner */
+}
+
+.post {
+    flex: 0 0 auto; /* Prevents shrinking and ensures fixed width */
+    width: var(--post-image-size); /* Set the width of each post */
+    text-align: center;
+}
+
+.post-image-container {
+    position: relative; /* Required for next/image with fill layout */
+    width: 100%; /* Ensures the container fills the width of the post */
+    aspect-ratio: 2 / 3; /* Maintains a 2:3 aspect ratio */
+    overflow: hidden; /* Ensures the image doesn't overflow the container */
+    border-radius: 8px; /* Optional: Adds rounded corners */
+}
+
+.post-image {
+    object-fit: cover; /* Ensures the image covers the container without distortion */
+}
+
+.post-info {
+    margin-top: 0.5rem;
+}
+
+.post-name {
+    font-size: 1rem;
+    font-weight: bold;
+    color: var(--foreground);
+}
+
+.post-year {
+    font-size: 0.875rem;
+    color: gray;
+}
