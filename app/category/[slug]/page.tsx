@@ -1,4 +1,6 @@
 "use client"
+import Footer from '@/app/components/Footer';
+import Hero from '@/app/components/Hero';
 import { SlugProps } from '@/interfaces'
 import React, { useEffect, useState } from 'react'
 
@@ -13,7 +15,13 @@ const Category = ({ params }: SlugProps) => {
     }, [params])
 
   return (
-    <div>{slug}</div>
+    <>
+    <Hero />
+    <div className="p-4 md:p-20 content">
+        This is slug {slug}
+    </div>
+    <Footer />
+    </>
   )
 }
 
