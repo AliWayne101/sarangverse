@@ -1,3 +1,5 @@
+"use client"
+import { signIn } from 'next-auth/react'
 import Link from 'next/link'
 import React from 'react'
 
@@ -13,6 +15,7 @@ const Footer = () => {
                     <a href="#" className="hover:text-gray-400">About Us</a>
                     <a href="#" className="hover:text-gray-400">Contact</a>
                     <a href="#" className="hover:text-gray-400">Privacy Policy</a>
+                    <a href='#' onClick={() => signIn()}>SignIn</a>
                 </div>
                 <div className="text-sm text-gray-400">
                     © {new Date().getFullYear()} SarangVerse. All rights reserved.<br />Developed by <Link href="https://waynedev.vercel.app">Wayne Development</Link>
