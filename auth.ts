@@ -2,10 +2,11 @@ import { AuthOptions, getServerSession } from "next-auth";
 import GithubProvider from "next-auth/providers/github";
 
 const authOptions: AuthOptions = {
+    secret: process.env.NEXTAUTH_SECRET!,
     providers: [
         GithubProvider({
-            clientId: process.env.GITHUB_ID!,
-            clientSecret: process.env.GITHUB_SECRET!,
+            clientId: process.env.NEXTAUTH_GITHUB_ID!,
+            clientSecret: process.env.NEXTAUTH_GITHUB_SECRET!,
         })
     ],
     session: {
